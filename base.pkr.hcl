@@ -17,8 +17,8 @@ build {
     sources = ["sources.googlecompute.rhel8-vmx"]
 
     provisioner "shell" {
-        inline = [            
-            "sudo yum update -y", 
+        inline = [
+            "sudo yum update -y",
             "sudo adduser crc -G wheel",
             "sudo dnf remove dnf-automatic -y",
             "echo '%wheel	ALL=(ALL)	NOPASSWD: ALL' | sudo tee -a /etc/sudoers"

@@ -11,7 +11,7 @@ source "googlecompute" "crc" {
 
     zone                = "europe-west1-b"
     machine_type        = "n1-standard-16"
-    image_name          = "rhel-crc"
+    image_family        = "rhel-crc"
     disk_size           = 40
     image_licenses      = ["projects/vm-options/global/licenses/enable-vmx"]
 }
@@ -34,7 +34,7 @@ build {
             "sudo mv crc-linux*/crc /usr/local/bin",
             "crc config set consent-telemetry no",
             "crc setup",
-            "crc start -p /tmp/pull-secret.txt", 
+            "crc start -p /tmp/pull-secret.txt",
             "rm /tmp/pull-secret.txt",
             "crc stop"
         ]
